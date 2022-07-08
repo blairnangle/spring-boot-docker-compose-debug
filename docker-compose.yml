@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  spring-boot-docker-compose-debug:
+    build: .
+    image: spring-boot-docker-compose-debug
+    container_name: spring-boot-docker-compose-debug
+    ports:
+      - "8080:8080"
+    command: java -jar spring-boot-docker-compose-debug.jar

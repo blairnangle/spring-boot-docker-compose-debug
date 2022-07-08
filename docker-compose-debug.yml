@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  spring-boot-docker-compose-debug:
+    build: .
+    image: spring-boot-docker-compose-debug
+    container_name: spring-boot-docker-compose-debug
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    command: java -jar spring-boot-docker-compose-debug.jar
+    environment:
+      - JAVA_DEBUG_PORT=5005
+      - JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
